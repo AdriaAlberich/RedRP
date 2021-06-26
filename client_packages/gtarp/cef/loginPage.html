@@ -1,0 +1,52 @@
+﻿<html>
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/main.css">
+	</head>
+
+	<body>
+		<script src="assets/js/jquery-3.2.0.min.js"></script>
+		<script src="loginPage.js"></script>
+
+		<div id="content" class="loginDiv invisible">
+			<div class="logoDiv centerDiv">
+				<img class="logo" src="assets/img/logo.png"/>
+			</div>
+			<br/><br/><br/>
+			<div id="login" class="container-white centerDiv loginSection invisible">
+			    <h1><font size="7"><i class='fa fa-lock'></i></font> Conectar</span></h1>
+			    <div id="loginErrorMessage" class="alert-box error invisible"></div>
+			    <br/>
+			    <div id="welcomeMessage" class="normal-text">Bienvenido/a a Grand Theft Auto Roleplay, <span id="playerName"></span>.</div>
+			    <br/><br/>
+			    <small>Recuerda que solo dispones de 4 intentos para introducir la contraseña, si no la recuerdas puedes cambiarla desde http://panel.gta-rp.es</small>
+			    <br/><br/>
+			    <h4>Nombre o E-Mail</h4>
+			    <div>
+					<input type="text" id="nick" class="textbox wide centerText" name="nick" value="" maxlength="32" placeholder="Nombre o E-Mail">
+				</div>
+				<h4>Contraseña</h4>
+				<div>
+					<input type="password" id="password" class="textbox wide centerText" name="password" value="" maxlength="32" placeholder="Contraseña">
+				</div>
+				<br/><br/>
+				<div class="centerText">
+					<button id="loginButton" type="button" class="btnBlue center" onClick="login()">Entrar</button>
+				</div>
+			</div>
+			<div id="characterSelector" class="container-white centerDiv characterSection invisible">
+			    <h1><font size="7"><i class='fa fa-user-circle'></i></font> Elegir personaje</h1>
+			    <div id="characterErrorMessage" class="alert-box error invisible"></div>
+			    <br/><br/>
+			    <small>Elige uno de los personajes de la lista para empezar a jugar. Si no tienes todavia ninguno, crealo desde http://panel.gta-rp.es</small>
+			    <br/><br/>
+			    <table id="characterList" class="table-fill">
+			    	<tbody class="table-hover verticalScroll">
+			    	</tbody>
+			    </table>
+			</div>
+		</div>
+	</body>
+</html>

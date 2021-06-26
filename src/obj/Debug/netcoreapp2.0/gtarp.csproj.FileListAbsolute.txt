@@ -1,0 +1,4 @@
+F:\Repositorios\gtarp_rage_original\src\obj\Debug\netcoreapp2.0\gtarp.csprojAssemblyReference.cache
+F:\Repositorios\gtarp_rage_original\src\obj\Debug\netcoreapp2.0\gtarp.csproj.CoreCompileInputs.cache
+F:\Repositorios\gtarp_rage_original\src\obj\Debug\netcoreapp2.0\gtarp.AssemblyInfoInputs.cache
+F:\Repositorios\gtarp_rage_original\src\obj\Debug\netcoreapp2.0\gtarp.AssemblyInfo.cs

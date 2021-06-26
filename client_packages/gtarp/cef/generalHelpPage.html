@@ -1,0 +1,207 @@
+﻿<html>
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/main.css">
+	</head>
+
+	<body>
+		<script src="assets/js/jquery-3.2.0.min.js"></script>
+		<script src="generalHelpPage.js"></script>
+
+		<div id="content" class="centerDiv helpDiv invisible">
+			<div class="container-white">
+                <div class="verticalScroll">
+                    <h4>Controles generales</h4>
+                    <table class="table-fill">
+                        <thead>
+                        <th class="text-left">Acción</th>
+                        <th class="text-left">Descripción</th>
+                        <th class="text-left">Tecla</th>
+                        </thead>
+                        <tbody class="table-hover">
+                            <tr>
+                                <td class="text-left">Cerrar interfaz</td>
+                                <td class="text-left">Cierra cualquier interfaz gráfica</td>
+                                <td class="text-center"><strong>F1</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">Menú de ayuda</td>
+                                <td class="text-left">Muestra el menú de ayuda</td>
+                                <td class="text-center"><strong>F2</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">Lista de jugadores</td>
+                                <td class="text-left">Muestra la lista de jugadores conectados</td>
+                                <td class="text-center"><strong>TAB</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">Cambiar personaje</td>
+                                <td class="text-left">Muestra el menú de cambio de personaje</td>
+                                <td class="text-center"><strong>F3</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">Interacción propia</td>
+                                <td class="text-left">Muestra el menú dinámico de interacción propia</td>
+                                <td class="text-center"><strong>Y</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">Interacción externa</td>
+                                <td class="text-left">Muestra el menú dinámico de interacción externa</td>
+                                <td class="text-center"><strong>E</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">Inventario</td>
+                                <td class="text-left">Muestra el inventario del personaje</td>
+                                <td class="text-center"><strong>I</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">Cambiar volúmen voz 3D</td>
+                                <td class="text-left">Cambia la distancia en la que se lee el chat local</td>
+                                <td class="text-center"><strong>O</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr />
+                    <h4>Comandos generales</h4>
+                    <table class="table-fill">
+                        <thead>
+                        <th class="text-left">Acción</th>
+                        <th class="text-left">Descripción</th>
+                        <th class="text-left">Comando</th>
+                        </thead>
+                        <tbody class="table-hover">
+                            <tr>
+                                <td class="text-left">Chat cercano</td>
+                                <td class="text-left">Chat IC cercano (voz baja)</td>
+                                <td class="text-center"><strong>/c</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">Chat lejano</td>
+                                <td class="text-left">Chat IC lejano (gritar)</td>
+                                <td class="text-center"><strong>/g</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">Susurro</td>
+                                <td class="text-left">Susurro a la oreja de otro personaje</td>
+                                <td class="text-center"><strong>/s</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">Chat OOC</td>
+                                <td class="text-left">Chat OOC cercano</td>
+                                <td class="text-center"><strong>/o</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">Chat OOC privado</td>
+                                <td class="text-left">Chat OOC privado (mensajes privados)</td>
+                                <td class="text-center"><strong>/mp</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">Activar/Desactivar /mp</td>
+                                <td class="text-left">Activa o desactiva el uso del canal /mp</td>
+                                <td class="text-center"><strong>/dmp</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">Acción IC</td>
+                                <td class="text-left">Describe una acción del personaje por chat cercano</td>
+                                <td class="text-center"><strong>/me</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">Acción IC corta</td>
+                                <td class="text-left">Describe una acción del personaje corta (cabeza)</td>
+                                <td class="text-center"><strong>/ame</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">Entorno/Interacción IC</td>
+                                <td class="text-left">Describe el entorno o acciones en tercera persona</td>
+                                <td class="text-center"><strong>/do</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">Descripción corta</td>
+                                <td class="text-left">Coloca una descripción corta encima de la cabeza</td>
+                                <td class="text-center"><strong>/yo</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">Eliminar descripción corta</td>
+                                <td class="text-left">Elimina la descripción corta de encima la cabeza</td>
+                                <td class="text-center"><strong>/yob</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">Buscar jugador</td>
+                                <td class="text-left">Busca un jugador por su ID o parte del nombre del personaje.</td>
+                                <td class="text-center"><strong>/id</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">Desconectar</td>
+                                <td class="text-left">Te desconectas rapidamente del servidor.</td>
+                                <td class="text-center"><strong>/q</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr />
+                    <h4>Comandos inventario</h4>
+                    <table class="table-fill">
+                        <thead>
+                        <th class="text-left">Acción</th>
+                        <th class="text-left">Descripción</th>
+                        <th class="text-left">Comando</th>
+                        </thead>
+                        <tbody class="table-hover">
+                            <tr>
+                                <td class="text-left">Tirar al suelo derecha</td>
+                                <td class="text-left">Tiras el item de tu mano derecha al suelo.</td>
+                                <td class="text-center"><strong>/tirar</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">Tirar al suelo izquierda</td>
+                                <td class="text-left">Tiras el item de tu mano izquierda al suelo.</td>
+                                <td class="text-center"><strong>/tirari</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">Guardar derecha</td>
+                                <td class="text-left">Guardas el item de tu mano derecha en tus bolsillos.</td>
+                                <td class="text-center"><strong>/guardar</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">Guardar izquierda</td>
+                                <td class="text-left">Guardas el item de tu mano izquierda en tus bolsillos.</td>
+                                <td class="text-center"><strong>/guardari</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">Sacar derecha</td>
+                                <td class="text-left">Coges un item de tus bolsillos con tu mano derecha.</td>
+                                <td class="text-center"><strong>/sacar</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">Sacar izquierda</td>
+                                <td class="text-left">Coges un item de tus bolsillos con tu mano izquierda.</td>
+                                <td class="text-center"><strong>/sacari</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">Ceder derecha</td>
+                                <td class="text-left">Entregas el item de tu mano derecha a otro personaje.</td>
+                                <td class="text-center"><strong>/ceder</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">Ceder izquierda</td>
+                                <td class="text-left">Entregas el item de tu mano izquierda a otro personaje.</td>
+                                <td class="text-center"><strong>/cederi</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">Cambiar de mano</td>
+                                <td class="text-left">Intercambias los items de una mano a otra.</td>
+                                <td class="text-center"><strong>/mano</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">Usar item</td>
+                                <td class="text-left">Usas el item de tu mano derecha.</td>
+                                <td class="text-center"><strong>/usar</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+			</div>
+		</div>
+	</body>
+</html>

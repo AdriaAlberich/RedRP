@@ -1,0 +1,31 @@
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/main.css">
+	</head>
+
+	<body>
+		<script src="assets/js/jquery-3.2.0.min.js"></script>
+		<script src="dialogPage.js"></script>
+
+		<div id="content" class="centerDiv dialogDiv invisible">
+			<div class="container-white">
+				<div>
+				    <h3><span id="dialogTitle"></span></h3>
+				    <div id="dialogText"></div>
+				    <br/>
+					<div id="dialogZoneInput">
+						<input type="text" id="dialogInput" class="textbox wide" name="dialogInput" value="" required="required">
+					</div>
+					<br/><br/>
+					<div class="centerText">
+						<button id="dialogAccept" type="button" class="btnBlue center" onClick="dialogAccept()">Aceptar</button>
+						<button id="dialogCancel" type="button" class="btnRed center" onClick="dialogCancel()">Cancelar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

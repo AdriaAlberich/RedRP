@@ -1,0 +1,120 @@
+﻿<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<link rel="stylesheet" href="../css/font-awesome.min.css">
+	<link rel="stylesheet" href="../css/custom.css">
+	<!--<link rel="stylesheet" href="../css/main.css">-->
+</head>
+
+<body>
+	<script src="../js/lib/jquery-3.5.1.min.js"></script>
+	<script src="../js/lib/bootstrap.min.js"></script>
+	<!--<script src="../js/login.js"></script>-->
+	<div id="login-logo" class="container">
+		<div class="row">
+			<div class="col-lg"></div>
+			<div class="col-lg-6">
+				<img class="logo" src="../img/logo.png" />
+			</div>
+			<div class="col-lg"></div>
+		</div>
+	</div>
+	<div id="register" class="container hidden">
+		<div class="row">
+			<div class="col-lg"></div>
+			<div class="col-lg-6 container-black" style="padding-bottom: 15px;">
+				<h1><font size="7"><i class='fa fa-pencil'></i></font> Sign up</h1>
+				<div id="registerErrorMessage" class="alert alert-danger hidden">Error message</div>
+				<div>Welcome to RedRP, <span id="socialClubNameRegister"></span>. You need to register an account, please enter your details.</div>
+				<small>Your account is only YOURS, do not share your details with anyone.</small>
+				<hr />
+				<h4>Username</h4>
+				<input type="text" id="username" class="form-control" name="username" value="" maxlength="32" placeholder="Your Username">
+				<br />
+				<h4>Email</h4>
+				<input type="text" id="email" class="form-control" name="username" value="" maxlength="64" placeholder="Your Email">
+				<br />
+				<h4>Password</h4>
+				<input type="password" id="registerPassword" class="form-control" name="registerPassword" value="" maxlength="32" placeholder="******">
+				<br />
+				<h4>Repeat password</h4>
+				<input type="password" id="repeatPassword" class="form-control" name="repeatPassword" value="" maxlength="32" placeholder="******">
+				<hr />
+				<button id="registerButton" type="button" class="btn btn-primary" onClick="register()">Sign up</button>
+			</div>
+			<div class="col-lg"></div>
+		</div>
+	</div>
+	<div id="login" class="container hidden">
+		<div class="row">
+			<div class="col-lg"></div>
+			<div class="col-lg-6 container-black" style="padding-bottom: 15px;">
+				<h1><font size="7"><i class='fa fa-lock'></i></font> Sign in</h1>
+				<div id="loginErrorMessage" class="alert alert-danger hidden">Error message</div>
+				<div id="welcomeMessage">Welcome to RedRP, <span id="socialClubNameLogin"></span>. Please, enter your username and password.</div>
+				<small>Remember that you have 4 attempts. After those the account will be locked for security reasons.</small>
+				<hr />
+				<h4>Username or Email</h4>
+				<input type="text" id="usernameOrEmail" class="form-control" name="usernameOrEmail" value="" maxlength="64" placeholder="Your Username or Email">
+				<br />
+				<h4>Password</h4>
+				<input type="password" id="password" class="form-control" name="password" value="" maxlength="32" placeholder="******">
+				<hr />
+				<button id="loginButton" type="button" class="btn btn-primary" onClick="login()">Sign in</button>
+				<button id="recoverPassword" type="button" class="btn btn-primary" onClick="switchToRecoverFromLogin()">I forgot the password</button>
+			</div>
+			<div class="col-lg"></div>
+		</div>
+	</div>
+	<div id="recover" class="container hidden">
+		<div class="row">
+			<div class="col-lg"></div>
+			<div class="col-lg-6 container-black" style="padding-bottom: 15px;">
+				<h1><font size="7"><i class='fa fa-lock'></i></font> Recover password</h1>
+				<div id="recoverErrorMessage" class="alert alert-danger hidden">Error message</div>
+				<div>Enter your Email and click 'Send code'. You'll receive an email message containing an activation code. Then you'll need to paste it below and enter your new password.</div>
+				<hr />
+				<h4>Get a code</h4>
+				<input type="text" id="recoverEmail" class="form-control" name="recoverEmail" value="" maxlength="32" placeholder="Your Email">
+				<br />
+				<button id="sendRecoverCode" type="button" class="btn btn-primary" onClick="sendRecoverCode()">Send code</button>
+				<hr />
+				<h4>Recover password</h4>
+				<input type="text" id="recoverCode" class="form-control" name="recoverCode" value="" maxlength="32" placeholder="Enter the activation code">
+				<br />
+				<input type="password" id="recoverPassword" class="form-control" name="recoverPassword" value="" maxlength="32" placeholder="Enter a new password">
+				<br />
+				<input type="password" id="repeatRecoverPassword" class="form-control" name="repeatRecoverPassword" value="" maxlength="32" placeholder="Repeat the new password">
+				<hr />
+				<button id="recoverButton" type="button" class="btn btn-primary" onClick="changePassword()">Change password</button>
+				<button id="goBack" type="button" class="btn btn-primary" onClick="switchToLoginFromRecover()">Go back</button>
+			</div>
+			<div class="col-lg"></div>
+		</div>
+	</div>
+	<div id="characterSelector" class="container hidden">
+		<div class="row">
+			<div class="col-lg"></div>
+			<div class="col-lg-6 container-black" style="padding-bottom: 15px;">
+				<h1><font size="7"><i class='fa fa-user'></i></font> Character selection</h1>
+				<div id="characterErrorMessage" class="alert alert-danger hidden">Error message</div>
+				<div>Select one of your characters or create a new one.</div>
+				<small>You can create up to 3 characters.</small>
+				<hr />
+				<div class="characterList">
+					<button type="button" class="btn btn-primary btn-selection" onClick="selectCharacter(1)">Arthur Morgan</button>
+					<button type="button" class="btn btn-primary btn-selection" onClick="selectCharacter(2)">Dutch Van Der Linde</button>
+				</div>
+				<hr />
+				<button id="createCharacterButton" type="button" class="btn btn-primary" onClick="createCharacter()">Create a new character</button>
+			</div>
+			<div class="col-lg"></div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+/**
+ *  RedRP Gamemode
+ *  
+ *  Author: Atunero (atunerin@gmail.com)
+ *  Copyright(c) Atunero (MIT License)
+ */
+
+/* RDR2 font */
+@font-face {
+    font-family: crocks;
+    src: url(../fonts/crocks.ttf);
+}
+
+/* Server logo dimensions */
+.logo {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+body {
+    font-family: crocks;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+.container-black {
+    background: rgba(0,0,0,0.8);
+}
+
+.btn-primary {
+    background: red !important;
+    color: white !important;
+    border-radius: unset !important;
+    border: none !important;
+    width: auto;
+    height: 50px;
+    font-size: 18pt;
+}
+
+.alert-danger {
+    background: red;
+    border-radius: unset;
+    border: none;
+    color: white;
+}
+
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+    border: none;
+    border-radius: unset;
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+    border-color: none;
+    box-shadow: none;
+    outline: 0 none;
+}
+
+.characterList button {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    display: block;
+}
+
+hr {
+    background: white;
+}

@@ -1,0 +1,221 @@
+﻿<html>
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/main.css">
+	</head>
+
+	<body>
+		<script src="../js/jquery-3.2.0.min.js"></script>
+		<script src="../js/atmInterface.js"></script>
+
+		<div id="content" class="atmBaseLayer invisible">
+			<div class="container-black centerDiv">
+				<div class="atmDiv">
+					<div class="atmHeader">
+						<div id="atmLogo" class="atmLogo"></div>
+					</div>
+					<div class="atmBody">
+						<div id="cardSelector" class="centerDiv invisible">
+							<div class="centerText">
+								<h2 class="white">Introduce la tarjeta</h2>
+								<br/><br/>
+							    <table id="cardList" class="table-fill">
+							    	<tbody class="table-hover verticalScroll">
+							    	</tbody>
+							    </table>
+						   	</div>
+						</div>
+						<div id="pin" class="centerDiv invisible">
+							<div class="centerText">
+								<h2 class="white">Introduce el número PIN</h2>
+								<br/>
+							    <input type="password" id="pinInput" class="texrbox" style="width: 100px" name="pinInput" value="" maxlength="4">
+							    <br/><br/><br/>
+							    <button id="pinButton" type="button" class="btnBlue center" onClick="sendPIN()">OK</button>
+						   </div>
+						</div>
+						<div id="main" class="centerDiv invisible">
+							<div id="mainInfo" style="float:left; width:60%;">
+								<h2 class="white"><i class='fa fa-info-circle'></i> Información</h2>
+								<br/>
+							    <div class="atmLabel">
+                                    <h4 class="white" style="margin-top:10px; margin-left:10px;"><i class='fa fa-credit-card'></i> Número de cuenta: <span id="infoAccountNumber" style="color: yellow"></span></h4>
+                                </div>
+                                <div class="atmLabel">
+                                    <h4 class="white" style="margin-top:10px; margin-left:10px;"><i class='fa fa-tasks'></i> Tipo de cuenta: <span id="infoAccountType" style="color: yellow"></span></h4>
+                                </div>
+                                <div class="atmLabel">
+                                    <h4 class="white" style="margin-top:10px; margin-left:10px;"><i class='fa fa-user'></i> Titular: <span id="infoAccountOwner" style="color: yellow"></span></h4>
+                                </div>
+                                <div class="atmLabel">
+                                    <h4 class="white" style="margin-top:10px; margin-left:10px;"><i class='fa fa-money'></i> Saldo: <span id="infoMoney" style="color: forestgreen"></span></h4>
+                                </div>
+                                <div class="atmLabel">
+                                    <h4 class="white" style="margin-top:10px; margin-left:10px;"><i class='fa fa-money'></i> Deuda: <span id="infoDebt" style="color: red"></span></h4>
+                                </div>
+                                <div class="atmLabel">
+                                    <h4 class="white" style="margin-top:10px; margin-left:10px;"><i class='fa fa-calendar-check-o'></i> Último movimiento: <span id="infoLastMovement" style="color: yellow"></span></h4>
+                                </div>
+                            </div>
+						   	<div id="mainOptions" style="float:right; width:40%; text-align:right">
+						   		<button id="depositButton" type="button" class="btnBlue center squareButton" onClick="openDeposit()"><h5><i class='fa fa-arrow-circle-o-down'></i> Ingresar</h5></button>
+						   		<button id="withdrawButton" type="button" class="btnBlue center squareButton" onClick="openWithdraw()"><h5><i class='fa fa-arrow-circle-o-up'></i> Retirar</h5></button>
+						   		<button id="transferButton" type="button" class="btnBlue center squareButton" onClick="openTransfer()"><h5><i class='fa fa-send-o'></i> Transferir</h5></button>
+						   		<button id="historicButton" type="button" class="btnBlue center squareButton" onClick="openHistoric()"><h5><i class='fa fa-list-alt'></i> Histórico</h5></button>
+						   		<button id="closeButton" type="button" class="btnRed center" style="width:305px" onClick="closeATM()"><h5><i class='fa fa-mail-reply'></i> Retirar tarjeta</h5></button>
+						   	</div>
+						</div>
+						<div id="depositPrompt" class="centerDiv invisible">
+							<div class="centerText">
+								<h4 class="white">Importe a ingresar</h4>
+							    <input type="text" id="depositAmount" class="texrbox" style="width: 200px" name="depositAmount" value="" maxlength="6">
+							    <h4 class="white">Concepto</h4>
+							    <input type="text" id="depositConcept" class="texrbox" style="width: 600px" name="depositConcept" value="" maxlength="32">
+							    <br/><br/>
+							    <button id="makeDepositButton" type="button" class="btnBlue center" onClick="makeDeposit()">Ingresar</button>
+                                <button id="cancelDepositButton" type="button" class="btnRed center" onClick="cancelOperation()">Cancelar</button>
+						   </div>
+						</div>
+						<div id="withdrawPrompt" class="centerDiv invisible">
+							<div class="centerText">
+								<h4 class="white">Saldo disponible: <span id="withdrawActualMoney" style="color: forestgreen"></span></h4>
+								<br/>
+								<h4 class="white">Importe a retirar</h4>
+							    <input type="text" id="withdrawAmount" class="texrbox" style="width: 200px" name="withdrawAmount" value="" maxlength="6">
+							    <h4 class="white">Concepto</h4>
+							    <input type="text" id="withdrawConcept" class="texrbox" style="width: 600px" name="withdrawConcept" value="" maxlength="32">
+							    <br/><br/>
+							    <button id="makeWithdrawButton" type="button" class="btnBlue center" onClick="makeWithdraw()">Retirar</button>
+                                <button id="cancelWithdrawButton" type="button" class="btnRed center" onClick="cancelOperation()">Cancelar</button>
+						   </div>
+						</div>
+						<div id="transferPrompt" class="centerDiv invisible">
+							<div class="centerText">
+								<h4 class="white">Saldo disponible: <span id="transferActualMoney" style="color: forestgreen"></span></h4>
+								<h4 class="white">Cuenta destino</h4>
+							    <input type="text" id="transferAccount" class="texrbox" style="width: 600px" name="transferAccount" value="" maxlength="32">
+								<h4 class="white">Importe a transferir</h4>
+							    <input type="text" id="transferAmount" class="texrbox" style="width: 200px" name="transferAmount" value="" maxlength="6">
+							    <h4 class="white">Concepto</h4>
+							    <input type="text" id="transferConcept" class="texrbox" style="width: 600px" name="transferConcept" value="" maxlength="32">
+							    <br/><br/>
+							    <button id="makeTransferButton" type="button" class="btnBlue center" onClick="makeTransfer()">Transferir</button>
+                                <button id="cancelTransferButton" type="button" class="btnRed center" onClick="cancelOperation()">Cancelar</button>
+						   </div>
+						</div>
+						<div id="depositConf" class="centerDiv invisible">
+                            <div id="depositConfInfo" style="float:left; width:60%">
+                                <h2 class="white"><i class='fa fa-info-circle'></i> Datos de la operación</h2>
+                                <br />
+                                <div class="atmLabel">
+                                    <h4 class="white" style="margin-top:10px; margin-left:10px;"><i class='fa fa-credit-card'></i> Número de cuenta: <span id="depositConfAccount" style="color: yellow"></span></h4>
+                                </div>
+                                <div class="atmLabel">
+                                    <h4 class="white" style="margin-top:10px; margin-left:10px;"><i class='fa fa-money'></i> Saldo actual: <span id="depositConfActualMoney" style="color: forestgreen"></span></h4>
+                                </div>
+                                <div class="atmLabel">
+                                    <h4 class="white" style="margin-top:10px; margin-left:10px;"><i class='fa fa-money'></i> Deuda: <span id="depositConfDebt" style="color: red"></span></h4>
+                                </div>
+                                <div class="atmLabel">
+                                    <h4 class="white" style="margin-top:10px; margin-left:10px;"><i class='fa fa-money'></i> Importe a ingresar: <span id="depositConfDepositMoney" style="color: forestgreen"></span></h4>
+                                </div>
+                                <div class="atmLabel">
+                                    <h4 class="white" style="margin-top:10px; margin-left:10px;"><i class='fa fa-money'></i> Saldo final: <span id="depositConfFinalMoney" style="color: green"></span></h4>
+                                </div>
+                                <div class="atmLabel">
+                                    <h4 class="white" style="margin-top:10px; margin-left:10px;"><i class='fa fa-list-alt'></i> Concepto: <span id="depositConfConcept" style="color: yellow"></span></h4>
+                                </div>
+                            </div>
+						   	<div id="depositConfOptions" style="float:right; width:40%; text-align:right">
+						   		<button id="confirmDepositButton" type="button" class="btnBlue center" style="width:300px; margin:5px" onClick="confirmDeposit()"><h5><i class='fa fa-handshake-o'></i> Confirmar Ingreso</h5></button>
+						   		<button id="confirmDepositGotoMainButton" type="button" class="btnRed center" style="width:300px; margin:5px" onClick="cancelOperation()"><h5><i class='fa fa-mail-reply'></i> Cancelar operación</h5></button>
+						   	</div>
+						</div>
+						<div id="withdrawConf" class="centerDiv invisible">
+							<div id="withdrawConfInfo" style="float:left; width:60%">
+								<h2 class="white" style="margin-top:10px; margin-left:10px;"><i class='fa fa-info-circle'></i> Datos de la operación</h2>
+								<br/>
+                                <div class="atmLabel">
+                                    <h4 class="white" style="margin-top:10px; margin-left:10px;"><i class='fa fa-credit-card'></i> Número de cuenta: <span id="withdrawConfAccount" style="color: yellow"></span></h4>
+                                </div>
+                                <div class="atmLabel">
+                                    <h4 class="white" style="margin-top:10px; margin-left:10px;"><i class='fa fa-tasks'></i> Tipo de cuenta: <span id="withdrawConfAccountType" style="color: yellow"></span></h4>
+                                </div>
+                                <div class="atmLabel">
+                                    <h4 class="white" style="margin-top:10px; margin-left:10px;"><i class='fa fa-money'></i> Saldo actual: <span id="withdrawConfActualMoney" style="color: forestgreen"></span></h4>
+                                </div>
+                                <div class="atmLabel">
+                                    <h4 class="white" style="margin-top:10px; margin-left:10px;"><i class='fa fa-money'></i> Tipo de comisión: <span id="withdrawConfComissionType" style="color: yellow"></span></h4>
+                                </div>
+                                <div class="atmLabel">
+                                    <h4 class="white" style="margin-top:10px; margin-left:10px;"><i class='fa fa-money'></i> Comisión: <span id="withdrawConfComissionAmount" style="color: red"></span></h4>
+                                </div>
+                                <div class="atmLabel">
+                                    <h4 class="white" style="margin-top:10px; margin-left:10px;"><i class='fa fa-money'></i> Importe a retirar: <span id="withdrawConfMoney" style="color: forestgreen"></span></h4>
+                                </div>
+                                <div class="atmLabel">
+                                    <h4 class="white" style="margin-top:10px; margin-left:10px;"><i class='fa fa-money'></i> Saldo final: <span id="withdrawConfFinalMoney" style="color: green"></span></h4>
+                                </div>
+                                <div class="atmLabel">
+                                    <h4 class="white" style="margin-top:10px; margin-left:10px;"><i class='fa fa-list-alt'></i> Concepto: <span id="withdrawConfConcept" style="color: yellow"></span></h4>
+                                </div>
+						   	</div>
+						   	<div id="withdrawConfOptions" style="float:right; width:40%; text-align:right">
+						   		<button id="confirmWithdrawButton" type="button" class="btnBlue center" style="width:300px; margin:5px" onClick="confirmWithdraw()"><h5><i class='fa fa-handshake-o'></i> Confirmar Retiro</h5></button>
+						   		<button id="confirmWithdrawGotoMainButton" type="button" class="btnRed center" style="width:300px; margin:5px" onClick="cancelOperation()"><h5><i class='fa fa-mail-reply'></i> Cancelar operación</h5></button>
+						   	</div>
+						</div>
+						<div id="transferConf" class="centerDiv invisible">
+							<div id="transferConfInfo" style="float:left; width:60%">
+								<h2 class="white"><i class='fa fa-info-circle'></i> Datos de la operación</h2>
+								<br/>
+                                <div class="atmLabel">
+                                    <h4 class="white" style="margin-top:10px; margin-left:10px;"><i class='fa fa-credit-card'></i> Cuenta orígen: <span id="transferConfAccount" style="color: yellow"></span></h4>
+                                </div>
+                                <div class="atmLabel">
+                                    <h4 class="white" style="margin-top:10px; margin-left:10px;"><i class='fa fa-credit-card'></i> Cuenta destino: <span id="transferConfBeneficiary" style="color: yellow"></span></h4>
+                                </div>
+                                <div class="atmLabel">
+                                    <h4 class="white" style="margin-top:10px; margin-left:10px;"><i class='fa fa-money'></i> Saldo actual: <span id="transferConfActualMoney" style="color: forestgreen"></span></h4>
+                                </div>
+                                <div class="atmLabel">
+                                    <h4 class="white" style="margin-top:10px; margin-left:10px;"><i class='fa fa-money'></i> Tipo de comisión: <span id="transferConfComissionType" style="color: yellow"></span></h4>
+                                </div>
+                                <div class="atmLabel">
+                                    <h4 class="white" style="margin-top:10px; margin-left:10px;"><i class='fa fa-money'></i> Comisión: <span id="transferConfComissionAmount" style="color: red"></span></h4>
+                                </div>
+                                <div class="atmLabel">
+                                    <h4 class="white" style="margin-top:10px; margin-left:10px;"><i class='fa fa-money'></i> Importe a transferir: <span id="transferConfMoney" style="color: forestgreen"></span></h4>
+                                </div>
+                                <div class="atmLabel">
+                                    <h4 class="white" style="margin-top:10px; margin-left:10px;"><i class='fa fa-money'></i> Saldo final orígen: <span id="transferConfFinalMoney" style="color: green"></span></h4>
+                                </div>
+                                <div class="atmLabel">
+                                    <h4 class="white" style="margin-top:10px; margin-left:10px;"><i class='fa fa-list-alt'></i> Concepto: <span id="transferConfConcept" style="color: yellow"></span></h4>
+                                </div>
+						   	</div>
+						   	<div id="transferConfOptions" style="float:right; width:40%; text-align:right">
+						   		<button id="confirmTransferButton" type="button" class="btnBlue center" style="width:300px; margin:5px" onClick="confirmTransfer()"><h5><i class='fa fa-handshake-o'></i> Confirmar Transferencia</h5></button>
+						   		<button id="confirmTransferGotoMainButton" type="button" class="btnRed center" style="width:300px; margin:5px" onClick="cancelOperation()"><h5><i class='fa fa-mail-reply'></i> Cancelar operación</h5></button>
+						   	</div>
+						</div>
+						<div id="historic" class="centerDiv invisible">
+							<h2 class="white"><i class='fa fa-info-circle'></i> Histórico de movimientos</h2>
+							<div class="verticalScroll" style="height:260px">
+							    <table id="historicList" class="table-fill">
+							    	<tbody class="table-hover">
+							    	</tbody>
+							    </table>
+						    </div>
+						    <div class="centerText">
+						    	<button id="historicGotoMainButton" type="button" class="btnRed center" style="width:300px; margin:10px" onClick="cancelOperation()"><h5><i class='fa fa-mail-reply'></i> Volver</h5></button>
+						    </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,649 @@
+/*
+    main.css
+
+    Author: Atunero (atunerin@gmail.com)
+    Copyright (c) Grand Theft Auto Roleplay [gta-rp.es]
+
+    Contains the main CSS classes for the ingame GUI.
+
+*/
+
+/*
+    General purpose
+*/
+
+body {
+    font-family: Tahoma, Geneva, sans-serif;
+    overflow: hidden;
+}
+
+.container-white {
+	border-radius: 5px;
+	background: rgba(255,255,255,0.7);
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+.dialogDiv {
+    margin-top: 15% !important;
+    min-width: 400px;
+    max-width: 600px;
+}
+
+.helpDiv {
+    margin-top: 15% !important;
+    width: 1024px;
+    height: 512px;
+}
+
+.playerListDiv {
+    margin-top: 15% !important;
+    width: 768px;
+    height: 512px;
+}
+
+.verticalScroll {
+    width: auto;
+    height: 512px;
+    overflow-y: scroll;
+}
+
+.wide {
+    width: 100%;
+}
+
+.white {
+    color: white;
+}
+
+.yellow {
+    color: yellow;
+}
+
+.forestgreen {
+    color: forestgreen;
+}
+
+.red {
+    color: red;
+}
+
+.centerDiv {
+    margin: auto;
+}
+
+.centerText {
+    text-align: center;
+}
+
+/*
+    ATM system
+*/
+
+.atmBaseLayer {
+	margin-top: 10%;
+	height: 100%;
+	width: 100%;
+}
+
+.container-black {
+	border-radius: 20px;
+	background: #A4A4A4;
+	padding: 20px;
+	box-sizing: border-box;
+	width: 1024px;
+    opacity: 0.8;
+}
+
+.atmDiv {
+	background: #0040FF;
+	height:600px;
+	width:100%;
+}
+
+.atmHeader {
+	height: 150px;
+	width: 100%;
+}
+
+.atmLogo {
+	float:left;
+	margin: 10px;
+}
+
+.atmBody {
+	margin: 10px;
+}
+
+.atmLabel {
+    height: 20px;
+    margin-bottom: 10px;
+    background: #A4A4A4;
+    background-image: -webkit-linear-gradient(top, #A4A4A4, #848484);
+    background-image: -moz-linear-gradient(top, #A4A4A4, #84848);
+    background-image: -ms-linear-gradient(top, #A4A4A4, #84848);
+    background-image: -o-linear-gradient(top, #A4A4A4, #84848);
+    background-image: linear-gradient(to bottom, #A4A4A4, #84848);
+    border-radius: 3px;
+}
+
+/*
+    Login system
+*/
+
+.loginDiv {
+	margin-top: 5%;
+	height:100%;
+	width: 100%;
+}
+
+.loginSection {
+	width:500px;
+}
+
+.characterSection {
+	width:1000px;
+}
+
+/*
+    Inventory system
+*/
+
+.inventoryDiv {
+    margin-top: 15%;
+    width: 1024px;
+    height: 512px;
+    font-family: Arial;
+    color: #000;
+    font-size: 20px;
+    font-weight: bolder;
+    -webkit-user-select: none;
+}
+
+.inventoryLeft {
+    float: left;
+    width: 480px;
+    height: 100%;
+}
+
+.inventoryRight {
+    float: right;
+    width: 480px;
+    height: 100%;
+}
+
+.inventoryTitle {
+    float: left;
+    width: 50%;
+    height: 25px;
+    text-align: left;
+}
+
+.inventoryTitle > span {
+    margin:2px;
+}
+
+.inventoryTitle > i {
+    margin-left: 10px;
+    color: green;
+    cursor: pointer;
+}
+
+.inventoryTitle > i:hover {
+    color:greenyellow;
+}
+
+.inventoryCapacity {
+    float: right;
+    width: 50%;
+    height: 25px;
+    text-align: right;
+}
+
+.inventoryCapacity > span {
+    margin: 2px;
+}
+
+.inventoryContent {
+    float: left;
+    width: 100%;
+    height: 400px;
+}
+
+.inventoryPagination {
+    float:left;
+    width: 100%;
+    height: 50px;
+}
+
+.inventoryPaginationCounter {
+    text-align:center; 
+    margin-top:18px;
+}
+
+.inventoryItem {
+    float: left;
+    margin: 2.5px;
+    width: 75px;
+    height: 75px;
+    cursor: pointer;
+}
+
+.inventoryItem > div {
+    margin-top:80%;
+    width:100%;
+    color: #000;
+    font-size: small;
+    text-align: right;
+    font-weight: bold;
+}
+
+.btnBlueInventory {
+    background: #3498db;
+    background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+    background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+    background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+    background-image: -o-linear-gradient(top, #3498db, #2980b9);
+    background-image: linear-gradient(to bottom, #3498db, #2980b9);
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0px;
+    border: 0px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 13px 13px 13px 13px;
+    text-decoration: none;
+    margin: 2.5px;
+    cursor: pointer;
+}
+
+.btnBlueInventory:hover {
+    background: #3cb0fd;
+    background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+    text-decoration: none;
+}
+
+/*
+    Buttons
+*/
+
+.btnBlue {
+	background: #3498db;
+	background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+	background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+	background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+	background-image: -o-linear-gradient(top, #3498db, #2980b9);
+	background-image: linear-gradient(to bottom, #3498db, #2980b9);
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0px;
+	border: 0px;
+	font-family: Arial;
+	color: #ffffff;
+	font-size: 20px;
+	padding: 10px 30px 10px 30px;
+	text-decoration: none;
+}
+
+.btnBlue:hover {
+	background: #3cb0fd;
+	background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+	background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+	background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+	background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+	background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+	text-decoration: none;
+}
+
+.btnGreen {
+	background: #0B610B;
+	background-image: -webkit-linear-gradient(top, #0B610B, #088A08);
+	background-image: -moz-linear-gradient(top, #0B610B, #088A08);
+	background-image: -ms-linear-gradient(top, #0B610B, #088A08);
+	background-image: -o-linear-gradient(top, #0B610B, #088A08);
+	background-image: linear-gradient(to bottom, #0B610B, #088A08);
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0px;
+	border: 0px;
+	font-family: Arial;
+	color: #ffffff;
+	font-size: 20px;
+	padding: 10px 30px 10px 30px;
+	text-decoration: none;
+}
+
+.btnGreen:hover {
+	background: #04B404;
+	background-image: -webkit-linear-gradient(top, #04B404, #01DF01);
+	background-image: -moz-linear-gradient(top, #04B404, #01DF01);
+	background-image: -ms-linear-gradient(top, #04B404, #01DF01);
+	background-image: -o-linear-gradient(top, #04B404, #01DF01);
+	background-image: linear-gradient(to bottom, #04B404, #01DF01);
+	text-decoration: none;
+}
+
+.btnRed {
+	background: #d9343c;
+	background-image: -webkit-linear-gradient(top, #d9343c, #b82b2b);
+	background-image: -moz-linear-gradient(top, #d9343c, #b82b2b);
+	background-image: -ms-linear-gradient(top, #d9343c, #b82b2b);
+	background-image: -o-linear-gradient(top, #d9343c, #b82b2b);
+	background-image: linear-gradient(to bottom, #d9343c, #b82b2b);
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0px;
+	border: 0px;
+	font-family: Arial;
+	color: #ffffff;
+	font-size: 20px;
+	padding: 10px 30px 10px 30px;
+	text-decoration: none;
+}
+
+.btnRed:hover {
+	background: #fc3c4c;
+	background-image: -webkit-linear-gradient(top, #fc3c4c, #d9343c);
+	background-image: -moz-linear-gradient(top, #fc3c4c, #d9343c);
+	background-image: -ms-linear-gradient(top, #fc3c4c, #d9343c);
+	background-image: -o-linear-gradient(top, #fc3c4c, #d9343c);
+	background-image: linear-gradient(to bottom, #fc3c4c, #d9343c);
+	text-decoration: none;
+}
+
+/*
+    Textboxes
+*/
+
+.textbox {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background-color: #EAEAEA;
+    background: -moz-linear-gradient(top, #FFF, #EAEAEA);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.0, #FFF), color-stop(1.0, #EAEAEA));
+    border: 1px solid #CACACA;
+    color: #444;
+    font-size: 1.4em;
+    padding: 5px 9px;
+}
+ .textbox:focus {
+    background: #FFF;
+    -webkit-box-shadow: 0 0 25px #CCC;
+    -moz-box-shadow: 0 0 25px #ccc;
+    box-shadow: 0 0 25px #CCC;
+    -webkit-transform: scale(1.01);
+    -moz-transform: scale(1.01);
+    transform: scale(1.01);
+}
+
+/*
+    Alerts
+*/
+
+.alert-box {
+	color:#555;
+	border-radius:10px;
+	font-family:Tahoma,Geneva,Arial,sans-serif;font-size:11px;
+	padding:10px 36px;
+	margin:10px;
+}
+.error {
+	background:#ffecec url('../img/error.png') no-repeat 10px 50%;
+	border:1px solid #f5aca6;
+}
+.success {
+	background:#e9ffd9 url('../img/success.png') no-repeat 10px 50%;
+	border:1px solid #a6ca8a;
+}
+.warning {
+	background:#fff8c4 url('../img/warning.png') no-repeat 10px 50%;
+	border:1px solid #f2c779;
+}
+.notice {
+	background:#e3f7fc url('../img/notice.png') no-repeat 10px 50%;
+	border:1px solid #8ed9f6;
+}
+
+.normal-text {
+	color: #000;
+	font-family: verdana;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	text-decoration: none;
+}
+
+small {
+	color: #000;
+	font-family: verdana;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+h1 {
+	color: #000;
+	font-family: verdana;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 24px;
+	text-decoration: none;
+}
+
+label {
+	color: #000;
+	font-family: verdana;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	text-decoration: none;
+}
+
+.logoDiv {
+	width: 500px;
+}
+
+.logo {
+	width: 100%;
+}
+
+label {
+	font-weight: bold;
+}
+
+.invisible {
+	display: none;
+}
+
+/* TABLE */
+
+.table-fill {
+  background: white;
+  border-radius:3px;
+  border-collapse: collapse;
+  margin: auto;
+  padding:5px;
+  width: 100%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  animation: float 5s infinite;
+}
+ 
+th {
+  color:#D5DDE5;;
+  background:#1b1e24;
+  border-bottom:4px solid #9ea7af;
+  border-right: 1px solid #343a45;
+  font-size:23px;
+  font-weight: 100;
+  padding:10px;
+  text-align:left;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  vertical-align:middle;
+}
+
+th:first-child {
+  border-top-left-radius:3px;
+}
+ 
+th:last-child {
+  border-top-right-radius:3px;
+  border-right:none;
+}
+  
+tr {
+  border-top: 1px solid #C1C3D1;
+  border-bottom-: 1px solid #C1C3D1;
+  color:#666B85;
+  font-size:16px;
+  font-weight:normal;
+  text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+}
+ 
+tr:hover td {
+  background:#4E5066;
+  color:#FFFFFF;
+}
+ 
+tr:first-child {
+  border-top:none;
+}
+
+tr:last-child {
+  border-bottom:none;
+}
+ 
+tr:nth-child(odd) td {
+  background:#EBEBEB;
+}
+ 
+tr:nth-child(odd):hover td {
+  background:#4E5066;
+}
+
+tr:last-child td:first-child {
+  border-bottom-left-radius:3px;
+}
+ 
+tr:last-child td:last-child {
+  border-bottom-right-radius:3px;
+}
+ 
+td {
+  background:#FFFFFF;
+  padding:5px;
+  text-align:left;
+  vertical-align:middle;
+  font-weight:300;
+  font-size:18px;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid #C1C3D1;
+}
+
+td:last-child {
+  border-right: 0px;
+}
+
+th.text-left {
+  text-align: left;
+}
+
+th.text-center {
+  text-align: center;
+}
+
+th.text-right {
+  text-align: right;
+}
+
+td.text-left {
+  text-align: left;
+}
+
+td.text-center {
+  text-align: center;
+}
+
+td.text-right {
+  text-align: right;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #e1e1e1;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #000000;
+}
+::-webkit-scrollbar-track {
+  background: #666666;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #666666;
+}
+::-webkit-scrollbar-track:active {
+  background: #333333;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* PROGRESS BAR */
+progress {
+  	background-image: #0f0;
+
+    border-radius: 2px; 
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+}
+
+.texrbox {
+	text-align: center;
+    padding: 8px !important;
+    height: auto;
+    background: #f2f2f2;
+    color: #333;
+    border: none;
+    border-bottom: 1px solid #999;
+    border-radius: 1px;
+    font-size: 28px;
+    outline: none;
+    -webkit-transition: all 250ms ease-in;
+    -moz-transition: all 250ms ease-in;
+    -ms-transition: all 250ms ease-in;
+    -o-transition: all 250ms ease-in;
+    transition: all 250ms ease-in;
+}
+.texrbox:focus {
+    background: #f9f9f9;
+    border-bottom: 1px solid #333;
+}
+
+.squareButton {
+	padding: 10px;
+	width: 150px;
+	height: 150px;
+	margin-bottom: 5px;
+}
+
+
+

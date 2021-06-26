@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<meta>
+  <info name="GTARP" author="Atunero" type="gamemode"/>
+
+  <!-- Gamemode assembly -->
+  <script src="GTARP.dll" />
+
+</meta>
