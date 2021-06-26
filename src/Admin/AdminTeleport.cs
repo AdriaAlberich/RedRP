@@ -1,8 +1,8 @@
 ﻿/**
  *  RedRP Gamemode
  *  
- *  Author: Atunero (atunerin@gmail.com)
- *  Copyright(c) Atunero (MIT License)
+ *  Author: Adrià Alberich (Atunero) (alberichjaumeadria@gmail.com / atunerin@gmail.com)
+ *  Copyright(c) Adrià Alberich (Atunero) (MIT License)
  */
 
 
